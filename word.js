@@ -9,7 +9,7 @@ var Word = function (results) {
     this.word = results;
     // letter array
     this.letters = [];
-    // indicate if user find the word, default should be false
+    //  if user finds the word, false should be on 
     this.find = false;
     // pushes each letter to the letter array
     this.letterPush = function () {
@@ -22,13 +22,13 @@ var Word = function (results) {
     this.checkLetter = function (guessedLetter) {
         // letter counter
         var counter = 0;
-        // iterates through each letter to see check for match
+        // loop through each letter to check if user letter is in there
         for (var i = 0; i < this.letters.length; i++) {
-            // if letter is the guessed letter, change the indicator to true
+            // if letter is the correct guessed letter then change the indicator from false to true
             if (this.letters[i].char == guessedLetter) {
                 this.letters[i].show = true;
                 counter++;
-                // console.log(counter);
+            
             }
         }
         // number of letters shown
@@ -38,7 +38,7 @@ var Word = function (results) {
 
     // check to see if user find the word
     this.checkFind = function () {
-        // check every letter in the letter array, if all of the indiator is true, then return true, otherwise, return false
+        // check every letter in the letter array, if all of the  is true, then return true, otherwise, return false
         this.find = this.letters.every(function (letter) {
             // console.log(letter.show);
             return letter.show;
